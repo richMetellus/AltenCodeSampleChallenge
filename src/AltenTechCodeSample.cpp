@@ -2,8 +2,7 @@
 //
 
 #include <iostream>
-//#include <fcntl.h>
-//#include <io.h>
+#include <windows.h>
 #include "VehicleRepositoryRegistry.h"
 #include "VehicleFactory.h"
 
@@ -42,7 +41,7 @@ void usage()
 
 int main()
 {
-   
+    SetConsoleOutputCP(1252);
     // Demo:
     std::cout << "create vehicle using factory \n " << atcc::eTeslaVehicle <<std::endl;;
     atcc::Vehicle* randomVehicle = atcc::VehicleFactory::createVehicle(atcc::eTeslaVehicle);
@@ -72,13 +71,6 @@ int main()
 
     randomVehicle = atcc::VehicleFactory::createVehicle(atcc::eTeslaVehicle);
     carInventory->addItem(randomVehicle);
-
-    
-    // Testing copyright on windows:
-    // _setmode(_fileno(stdout), _O_U16TEXT);
-    // wchar_t* copyright = L"Copyright ©\r\n";
-    // wprintf(copyright);
-    // std::wcout << (wchar_t)0xA9 << " Copyright symbol" << std::endl;
 
     // TEST
     std::cout << "\nAll entries in the repository: \n";
