@@ -19,12 +19,6 @@ namespace atcc
 		 void listVehiclesByYear(unsigned int year) const ;
 		 void listVehiclesByManufacturer(std::string make) const ;
 
-		 // utility methods
-		 /*
-		 * Method that will populate the inventory with
-		 */
-		//  void makeCache();
-		//  void loadCache();
 
 	private:  // members
 

@@ -13,9 +13,6 @@ namespace atcc
 		std::string vin );
 		~GenericVehicle();
 
-		// not really the best design but demonstrate override.
-		// this violates the Single Responsibility Principle
-
 	};
 }
 

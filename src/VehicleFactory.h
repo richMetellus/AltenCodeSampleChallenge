@@ -23,7 +23,9 @@ namespace atcc
 	public:
 
 		// factory method to create different type of objects
-		    // provide an extra level of abstraction so client code doesn't have to create their own object
+		// provide an extra level of abstraction so client code doesn't have to create their own object
+		// right now it only create default , but it can change to allow user input.
+		// this is convenient for now as a demonstration
 		static Vehicle* createVehicle(vehicleType type)
 		{
 			Vehicle* aVehicle = NULL;
@@ -33,11 +35,11 @@ namespace atcc
 			{
 				case eGenericVehicle:
 					defaultManufacturer = {"Ford", "USA"};
-					aVehicle = new GenericVehicle(defaultManufacturer, "Bronco", 2016, "Red", "AFCD23doa");
+					aVehicle = new GenericVehicle(defaultManufacturer, "Bronco", 2020, "Red", "AJLDOE-8424DO2-AKOAJ");
 					break;
 			
 				case eBWMVehicle:
-					aVehicle = new BMWVehicle("X3", 2022, "Black", "SBMWDBOD-DSO-EO894JD");
+					aVehicle = new BMWVehicle("X3", 2021, "Black", "SBMWDB-ODDSOEO8-94JD");
 					break;
 			
 				case eTeslaVehicle:
@@ -48,8 +50,6 @@ namespace atcc
 					std::cout << "Invalid type entry";
 					break;
 			}
-			//TODO: WARNING: after the function exit, the variable is destroyed but the memory will
-			// not be deallocated. So I might have to use some kind of smart pointer instead.
 			return aVehicle;
 
 		}
