@@ -2,9 +2,12 @@
 //
 
 #include <iostream>
-#include <windows.h>
 #include "VehicleRepositoryRegistry.h"
 #include "VehicleFactory.h"
+
+#if defined(WIN32)
+#include <windows.h>
+#endif
 
 typedef enum 
 {
@@ -41,7 +44,9 @@ void usage()
 
 int main()
 {
-    SetConsoleOutputCP(1252);
+    #if defined(WIN32)
+       SetConsoleOutputCP(1252);
+    #endif
     // Demo:
     std::cout << "create vehicle using factory \n " << atcc::eTeslaVehicle <<std::endl;;
     atcc::Vehicle* randomVehicle = atcc::VehicleFactory::createVehicle(atcc::eTeslaVehicle);
