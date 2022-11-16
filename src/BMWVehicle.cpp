@@ -9,7 +9,7 @@ namespace atcc
 	{
         this->_make = {"BMW", "Germany"};
 		_className = "BMWVehicle";
-		magicString = "\x00A9 BMW AG, Munich, Germany";
+		magicString = "\u00A9 BMW AG, Munich, Germany";
 	}   
 
 	BMWVehicle::~BMWVehicle()
